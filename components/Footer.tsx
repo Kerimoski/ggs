@@ -92,7 +92,7 @@ export default function Footer() {
                             © {currentYear} Gülgeldi Sigorta. Tüm hakları saklıdır.
                         </p>
                         <p className="text-white/60 text-sm flex items-center gap-2">
-                            Made with <Heart size={16} className="text-pink-400 fill-pink-400" /> by Gülgeldi Team
+                            Made with <Heart size={16} className="text-pink-400 fill-pink-400" /> by Abdulkerim Erdurun
                         </p>
                     </div>
                 </div>
