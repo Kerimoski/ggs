@@ -124,11 +124,39 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
 }
 
 export default function Testimonials() {
-  // Duplicate for seamless infinite scroll
   const allTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section className="py-24 bg-slate-50 border-y border-slate-100 overflow-hidden">
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes ggs-scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes ggs-scroll-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .ggs-row-left {
+          animation: ggs-scroll-left 60s linear infinite;
+        }
+        .ggs-row-right {
+          animation: ggs-scroll-right 60s linear infinite;
+        }
+        @media (max-width: 768px) {
+          .ggs-row-left {
+            animation: ggs-scroll-left 12s linear infinite;
+          }
+          .ggs-row-right {
+            animation: ggs-scroll-right 12s linear infinite;
+          }
+        }
+        .ggs-row-left:hover,
+        .ggs-row-right:hover {
+          animation-play-state: paused;
+        }
+      `}} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">
@@ -143,53 +171,23 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Scrolling Row 1 - Left to Right */}
+      {/* Scrolling Row 1 */}
       <div className="relative mb-6">
-        <div className="flex gap-6 animate-scroll-left">
+        <div className="flex gap-6 ggs-row-left">
           {allTestimonials.map((testimonial, index) => (
             <TestimonialCard key={`row1-${index}`} testimonial={testimonial} />
           ))}
         </div>
       </div>
 
-      {/* Scrolling Row 2 - Right to Left */}
+      {/* Scrolling Row 2 */}
       <div className="relative">
-        <div className="flex gap-6 animate-scroll-right">
+        <div className="flex gap-6 ggs-row-right">
           {[...allTestimonials].reverse().map((testimonial, index) => (
             <TestimonialCard key={`row2-${index}`} testimonial={testimonial} />
           ))}
         </div>
       </div>
-
-      {/* Fade edges */}
-      <style jsx>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-        .animate-scroll-left {
-          animation: scroll-left 60s linear infinite;
-        }
-        .animate-scroll-right {
-          animation: scroll-right 60s linear infinite;
-        }
-        .animate-scroll-left:hover,
-        .animate-scroll-right:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 }
