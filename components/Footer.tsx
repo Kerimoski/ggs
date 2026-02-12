@@ -46,7 +46,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              2009&apos;dan beri kaliteli sigorta hizmetleri ile müşterilerimizin
+              2021&apos;den beri kaliteli sigorta hizmetleri ile müşterilerimizin
               yanındayız.
             </p>
             <a

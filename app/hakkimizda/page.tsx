@@ -3,7 +3,7 @@ import HakkimizdaContent from './HakkimizdaContent';
 
 export const metadata: Metadata = {
   title: 'Hakkımızda',
-  description: 'Gülgeldi Sigorta hakkında. 2009\'dan beri Van\'da güvenilir sigorta hizmetleri sunuyoruz. Misyonumuz, vizyonumuz ve değerlerimiz.',
+  description: 'Gülgeldi Sigorta hakkında. 2021\'den beri Van\'da güvenilir sigorta hizmetleri sunuyoruz. Misyonumuz, vizyonumuz ve değerlerimiz.',
 };
 
 export default function HakkimizdaPage() {

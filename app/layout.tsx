@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   keywords: "sigorta, gülgeldi sigorta, sağlık sigortası, araç sigortası, konut sigortası, kasko, trafik sigortası, van sigorta",
   openGraph: {
     title: "Gülgeldi Sigorta | Güvenle Geleceğe",
-    description: "Profesyonel sigorta danışmanlığı ve rekabetçi fiyatlar. 2009'dan beri hizmetinizdeyiz.",
+    description: "Profesyonel sigorta danışmanlığı ve rekabetçi fiyatlar. 2021'den beri hizmetinizdeyiz.",
     type: "website",
   },
 };

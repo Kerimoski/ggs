@@ -9,11 +9,10 @@ import {
 import { Button } from '@/components/ui/button';
 
 const timeline = [
-  { year: '2009', title: 'Kuruluş', description: 'Gülgeldi Sigorta, Van\'da sigorta hizmetlerine başladı.' },
-  { year: '2012', title: 'Büyüme', description: 'Müşteri portföyümüzü genişleterek yeni sigorta ürünleri ekledik.' },
-  { year: '2016', title: 'Dijitalleşme', description: 'Online hizmetlerimizi başlatarak daha geniş kitlelere ulaştık.' },
-  { year: '2020', title: 'Pandemi Süreci', description: 'Uzaktan hizmet altyapımızı güçlendirdik, kesintisiz destek sunduk.' },
-  { year: '2023', title: 'Yenilenme', description: 'Dijital platformlarımızı güncelleyerek WhatsApp ile teklif hizmeti başlattık.' },
+  { year: '2021', title: 'Kuruluş', description: 'Gülgeldi Sigorta, Van\'da sigorta hizmetlerine başladı.' },
+  { year: '2022', title: 'Büyüme', description: 'Müşteri portföyümüzü genişleterek yeni sigorta ürünleri ekledik.' },
+  { year: '2023', title: 'Dijitalleşme', description: 'Dijital platformlarımızı güncelleyerek WhatsApp ile teklif hizmeti başlattık.' },
+  { year: '2024', title: 'Gelişim', description: 'Hizmet yelpazemizi genişlettik, yeni sigorta ürünleri ekledik.' },
   { year: '2025', title: 'Günümüz', description: '500+ mutlu müşteri ile Van\'ın güvenilir sigorta acentesiyiz.' },
 ];
 
@@ -42,7 +41,7 @@ const values = [
 
 const stats = [
   { icon: Users, value: '500+', label: 'Mutlu Müşteri' },
-  { icon: Award, value: '15+', label: 'Yıllık Tecrübe' },
+  { icon: Award, value: '4+', label: 'Yıllık Tecrübe' },
   { icon: Shield, value: '7+', label: 'Sigorta Türü' },
   { icon: Clock, value: '7/24', label: 'Destek Hattı' },
 ];
@@ -61,7 +60,7 @@ export default function HakkimizdaContent() {
               Gülgeldi Sigorta
             </h1>
             <p className="text-lg text-slate-400 leading-relaxed">
-              2009&apos;dan beri Van&apos;da güvenilir sigorta hizmetleri sunuyoruz.
+              2021&apos;den beri Van&apos;da güvenilir sigorta hizmetleri sunuyoruz.
               Müşterilerimizin güvenle geleceğe bakmasını sağlamak en büyük önceliğimizdir.
             </p>
           </div>
@@ -112,7 +111,7 @@ export default function HakkimizdaContent() {
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold text-slate-900">Biz Kimiz?</h2>
                 <p className="text-slate-500 leading-relaxed">
-                  Gülgeldi Sigorta olarak, 2009 yılından bu yana Van ve çevresinde güvenilir
+                  Gülgeldi Sigorta olarak, 2021 yılından bu yana Van ve çevresinde güvenilir
                   sigorta hizmetleri sunuyoruz. Deneyimli kadromuz ile müşterilerimizin her
                   türlü sigorta ihtiyacına profesyonel çözümler üretiyoruz.
                 </p>
