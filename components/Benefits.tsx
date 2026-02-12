@@ -1,77 +1,78 @@
 'use client';
 
-import { CheckCircle2, Clock, Award, Headphones } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Clock, Award, CheckCircle2, Headphones } from 'lucide-react';
 
-const benefits = [
-    {
-        icon: Clock,
-        title: 'Hızlı İşlem',
-        description: 'Teklif almanız sadece birkaç dakika. Hemen poliçenizi oluşturun.',
-        stat: '5 Dakika',
-    },
-    {
-        icon: Award,
-        title: 'Uzman Kadro',
-        description: 'Tecrübeli ekibimiz ile en doğru sigorta çözümlerini sunuyoruz.',
-        stat: '3+ Yıl',
-    },
-    {
-        icon: CheckCircle2,
-        title: 'Güvenilir Hizmet',
-        description: 'Mutlu müşterilerimiz. Şeffaf ve dürüst hizmet anlayışı.',
-        stat: '500+',
-    },
-    {
-        icon: Headphones,
-        title: '7/24 Destek',
-        description: 'Her zaman yanınızdayız. Telefon ve WhatsApp ile anında destek.',
-        stat: '7/24',
-    },
+const stats = [
+  {
+    icon: Clock,
+    value: '~5 dk',
+    label: 'Teklif Süresi',
+    description: 'Teklif almanız sadece birkaç dakika sürer.',
+  },
+  {
+    icon: Award,
+    value: '3+ Yıl',
+    label: 'Tecrübe',
+    description: 'Sektörde uzun yıllara dayanan deneyim.',
+  },
+  {
+    icon: CheckCircle2,
+    value: '500+',
+    label: 'Mutlu Müşteri',
+    description: 'Şeffaf ve dürüst hizmet anlayışımız.',
+  },
+  {
+    icon: Headphones,
+    value: '7/24',
+    label: 'Destek',
+    description: 'Telefon ve WhatsApp ile her zaman yanınızda.',
+  },
 ];
 
 export default function Benefits() {
-    return (
-        <section className="py-24 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-full h-full" style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                    backgroundSize: '40px 40px',
-                }} />
-            </div>
+  return (
+    <section className="py-24 bg-slate-50 border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-3">
+            Neden Biz?
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            Neden Gülgeldi Sigorta?
+          </h2>
+          <p className="text-lg text-slate-500">
+            Müşteri memnuniyeti odaklı hizmet anlayışımız ile fark yaratıyoruz.
+          </p>
+        </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="text-center text-white mb-16 space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-shadow">
-                        Neden Gülgeldi Sigorta?
-                    </h2>
-                    <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                        Müşteri memnuniyeti odaklı hizmet anlayışımız ile fark yaratıyoruz
-                    </p>
+        {/* Stats Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="text-center space-y-4"
+            >
+              <div className="w-14 h-14 bg-white border border-slate-200 rounded-xl flex items-center justify-center mx-auto shadow-sm">
+                <stat.icon className="w-6 h-6 text-blue-600" />
+              </div>
+
+              <div className="space-y-1">
+                <div className="text-3xl font-bold text-slate-900">
+                  {stat.value}
                 </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {benefits.map((benefit, index) => (
-                        <Card
-                            key={index}
-                            className="group bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-105 shadow-xl"
-                        >
-                            <CardContent className="p-8 text-white text-center space-y-4">
-                                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 border-2 border-white/30">
-                                    <benefit.icon size={32} />
-                                </div>
-
-                                <div className="text-4xl font-bold text-shadow">{benefit.stat}</div>
-                                <h3 className="text-xl font-bold">{benefit.title}</h3>
-                                <p className="text-white/80 leading-relaxed">
-                                    {benefit.description}
-                                </p>
-                            </CardContent>
-                        </Card>
-                    ))}
+                <div className="text-sm font-semibold text-slate-700 uppercase tracking-wider">
+                  {stat.label}
                 </div>
+              </div>
+
+              <p className="text-sm text-slate-500 max-w-[200px] mx-auto">
+                {stat.description}
+              </p>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

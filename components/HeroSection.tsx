@@ -1,84 +1,131 @@
 'use client';
 
-import { Sparkles } from 'lucide-react';
-import Image from 'next/image';
-import QuoteForm from './QuoteForm';
+import Link from 'next/link';
+import { Shield, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const highlights = [
+  'Hızlı Teklif',
+  'Uzman Kadro',
+  'Rekabetçi Fiyat',
+  '7/24 Destek',
+];
 
 export default function HeroSection() {
-    return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-300/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-                <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-pink-300/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+  return (
+    <section className="relative min-h-screen flex items-center bg-slate-900 overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-900 to-slate-900" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-full">
+              <Shield className="w-4 h-4 text-blue-400" />
+              <span className="text-sm font-medium text-blue-300">
+                Güvenilir Sigorta Çözümleri
+              </span>
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Side - Content */}
-                    <div className="text-white space-y-8">
-                        <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/30 mt-4 md:mt-0">
-                            <Sparkles className="w-5 h-5" />
-                            <span className="text-sm font-medium">Türkiye'nin Güvenilir Sigorta Partneri</span>
-                        </div>
+            <div className="space-y-5">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+                Geleceğinizi
+                <br />
+                <span className="text-blue-400">Güvence</span> Altına Alın
+              </h1>
 
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-4">
-                                <div className="p-4 bg-white/20 backdrop-blur-md rounded-2xl border border-white/30">
-                                    <Image
-                                        src="/ggs.png"
-                                        alt="Gülgeldi Sigorta Logo"
-                                        width={60}
-                                        height={60}
-                                        className="w-15 h-15 object-contain"
-                                    />
-                                </div>
-                                <h1 className="text-5xl md:text-7xl font-bold text-shadow">
-                                    Gülgeldi <br /> Sigorta
-                                </h1>
-                            </div>
+              <p className="text-lg text-slate-400 max-w-lg leading-relaxed">
+                Gülgeldi Sigorta olarak, profesyonel kadromuz ve geniş ürün
+                yelpazemizle sizin ve sevdiklerinizin geleceğini koruyoruz.
+              </p>
+            </div>
 
-                            <h2 className="text-3xl md:text-4xl font-semibold">
-                                Güvenle Geleceğe
-                            </h2>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/teklif">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white h-12 px-8 rounded-lg text-base shadow-none">
+                  Ücretsiz Teklif Al
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+              <Link href="/sigortalar">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white h-12 px-8 rounded-lg text-base bg-transparent"
+                >
+                  Hizmetlerimiz
+                </Button>
+              </Link>
+            </div>
 
-                            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                                Hayatınızı ve sevdiklerinizi koruyun.
-                                <br />
-                                <span className="font-semibold">Profesyonel</span> kadromuzla en uygun sigorta çözümlerini sunuyoruz.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-4 text-lg">
-                            {['Hızlı Hizmet', 'Uzman Kadro', 'Rekabetçi Fiyat', '7/24 Destek'].map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-3 rounded-xl border border-white/20"
-                                >
-                                    <div className="w-2 h-2 bg-white rounded-full" />
-                                    <span>{item}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Right Side - Quote Form */}
-                    <div className="flex justify-center lg:justify-end">
-                        <QuoteForm />
-                    </div>
+            <div className="grid grid-cols-2 gap-3 pt-4">
+              {highlights.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-2.5 text-slate-400"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                  <span className="text-sm">{item}</span>
                 </div>
+              ))}
             </div>
+          </div>
 
-            {/* Bottom Wave */}
-            <div className="absolute bottom-0 left-0 right-0">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-                    <path
-                        d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-                        fill="white"
-                    />
-                </svg>
+          {/* Right - Stats Card */}
+          <div className="hidden lg:flex justify-end">
+            <div className="relative w-full max-w-md">
+              <div className="bg-white/[0.05] backdrop-blur-sm border border-white/10 rounded-2xl p-8 space-y-8">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-1.5">
+                    <div className="text-3xl font-bold text-white">500+</div>
+                    <div className="text-sm text-slate-400">Mutlu Müşteri</div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="text-3xl font-bold text-white">7/24</div>
+                    <div className="text-sm text-slate-400">Destek Hattı</div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="text-3xl font-bold text-white">6+</div>
+                    <div className="text-sm text-slate-400">Sigorta Türü</div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="text-3xl font-bold text-white">~5dk</div>
+                    <div className="text-sm text-slate-400">Teklif Süresi</div>
+                  </div>
+                </div>
+                <div className="h-px bg-white/10" />
+                <div className="space-y-3">
+                  <p className="text-sm text-slate-400">
+                    &ldquo;Sağlık, araç, konut, seyahat, hayat ve işyeri sigortasında
+                    profesyonel danışmanlık hizmeti.&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+                      <span className="text-xs font-bold text-white">GS</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-white">Gülgeldi Sigorta</div>
+                      <div className="text-xs text-slate-500">İpekyolu / Van</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl border border-blue-500/20" />
             </div>
-        </section>
-    );
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+    </section>
+  );
 }
