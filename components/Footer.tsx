@@ -131,7 +131,7 @@ export default function Footer() {
             &copy; {currentYear} Gülgeldi Sigorta. Tüm hakları saklıdır.
           </p>
           <p className="text-xs text-slate-500 flex items-center gap-1.5">
-            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> by Abdulkerim Erdurun
+            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> by <a href="https://abdulkerimerdurun.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline underline-offset-2">Abdulkerim Erdurun</a>
           </p>
         </div>
       </div>
